@@ -143,23 +143,32 @@ ContactInformation (Phone, Email) <br />
 
 ## Screenshots
 * ## Home Page
-![Home Page Screenshot](https://github.com/mita290/hospital_management_system/blob/master/screenshots/home.jpeg) 
+![Home Page Screenshot](screenshots/home.jpeg) 
 * ## Login/Registration page
 ![Staff Registration Page](https://github.com/mita290/hospital_management_system/blob/master/screenshots/register%20staff.jpeg)
-![Login Page Screenshot](https://github.com/mita290/hospital_management_system/blob/master/screenshots/login.jpeg)
+![Login Page Screenshot](screenshots/login.jpeg)
 * ## Dashboard
-![Dashboard Screenshot](https://github.com/mita290/hospital_management_system/blob/master/screenshots/dashboard.jpeg)
+![Dashboard Screenshot](screenshots/dashboard.jpeg)
 * ## Patient management page
 ![All Patients](screenshots/patient.jpeg)
+![Add Patients](https://github.com/mita290/hospital_management_system/blob/master/screenshots/add%20patient.jpeg)
+![Unique Patient Data](screenshots/uniquepatientdata.jpeg)
 * ## Doctor management page
+![Doctor Data](screenshots/doctor.jpeg)
 * ## Appointment scheduling page
+![Appointment](screenshots/appointment1.jpeg)
+![Appointment](screenshots/appointment2.jpeg)
 * ## Billing page
+![Billing](screenshots/billing.jpeg)
 * ## Equipment management page
+![Equipment](screenshots/equi1.jpeg)
+![Equipment](screenshots/equi2.jpeg)
 * ## Room management page
+![Room](screenshots/room.jpeg)
 
 ## Future Enhancements
 * Develop a module where doctors can update their availability status.
-* Create an administrator page where new doctors and staff can be registered.
+* Create an administrator page where new doctors and staff can be registered. Move existing staff registration feature to that module.
 * Send appointment details to patients' email IDs when appointments are booked.
 
 ## Contributing
