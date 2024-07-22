@@ -1,0 +1,352 @@
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  background-color: rgb(218, 199, 229);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo {
+  height: 400px;
+  width: 600px;
+  border-radius: 3rem;
+  border: 3px solid black;
+}
+
+#main {
+  margin-top: 5rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  border: 3px black solid;
+  border-radius: 1rem;
+  padding: 5rem;
+}
+
+#container-2 {
+  background-color: aliceblue;
+  border-radius: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+
+#buttons {
+  display: flex;
+  gap: 3rem;
+}
+
+.table-button {
+  text-decoration: none;
+  color: black;
+  background-color: rgb(245, 234, 234);
+  border-radius: 50%;
+  border: 2px solid black;
+  padding: 5px;
+  margin-left: 0%;
+}
+
+.table-button:hover {
+  color: white;
+  background-color: #0E1119;
+  border: 2px white solid;
+}
+
+a[role="link"] {
+  text-decoration: none;
+  color: wheat;
+}
+
+a[role="button"], input[type="submit"]{
+  border: 2px black solid;
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: rgb(207, 145, 225);
+  color: white;
+  text-decoration: solid;
+  font-size: larger;
+
+}
+
+a[role="button"]:hover, input[type="submit"]:hover {
+  background-color: rgb(0, 90, 139);
+  color: white;
+  border: 2px antiquewhite, groove;
+}
+
+#entry {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  height: 500px;
+  width: 800px;
+  overflow-y: hidden;
+  border: 3px solid black;
+  background-color: lavender;
+}
+
+#register {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  min-height: 100%;
+  border: 3px solid black;
+  padding: 3rem;
+  background-color: lavender;
+}
+
+input[type = "text"], input[type = "email"], input[type = "password"], input[type = "number"] {
+  width: 30rem;
+}
+
+#heading {
+  width: 100%;
+  height: 5rem;
+  position: fixed;
+  color: rgb(227, 220, 208);
+  background-color: rgb(83, 83, 164);
+  /* padding-top: 3rem; */
+  margin-top: 3rem;
+  display: flex;
+  gap: 75%;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-first {
+  position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100vh; /* Use viewport height */
+    width: 100vw; /* Use viewport width */
+    overflow: hidden; /* Hide any overflowing content */
+    z-index: -1;
+}
+
+.navbar {
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  background-color: #bca2e2;
+  min-height: 100%;
+  text-decoration: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  background-color: #697bad;
+  color: white;
+  padding: 0.9rem;
+  transition: border 3s;
+  box-shadow: #3f135d -1px 1px, #3f135d -2px 2px, #3f135d -3px 3px, #3f135d -4px 4px, #3f135d -5px 5px, #3f135d -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+}
+
+.navbar a:hover {
+  background-color: #6187df;
+}
+
+.content {
+  display: flex; 
+  flex-direction: column; 
+  gap: 100px;
+  position: absolute; 
+  /* top: 3rem; */
+  left: 10rem; 
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  min-height: 100%;
+  width: 85%; 
+}
+
+.table {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  padding: 5px;
+  padding-bottom: 10px;
+  border: 3px black solid;
+  border-radius: 1rem;
+}
+
+
+.table1 {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  /* border: 3px black solid; */
+  border-radius: 1rem;
+  background-color: rgb(204, 204, 204);
+}
+
+#doctordata {
+  margin-top: 20px;
+  overflow: scroll;
+}
+
+#patientdata {
+  width: 45%;
+  /* display: table; */
+  overflow: scroll;
+}
+
+#patientlink { 
+  text-decoration: none;
+  color: #ffb1bc;
+}
+
+#patientlink:hover {
+  color: black;
+}
+
+.container th {
+  font-weight: bold;
+  font-size: 1em;
+  text-align: left;
+  color: #185875;
+}
+
+.container td {
+  font-weight: normal;
+  font-size: 1em;
+-webkit-box-shadow: 0 2px 2px -2px #8796be;
+   -moz-box-shadow: 0 2px 2px -2px #a6b7e4;
+        box-shadow: 0 2px 2px -2px #b3bdd7;
+}
+
+.container {
+  text-align: left;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  width: 100%;
+  margin: 0;
+  display: table;
+  /* padding: 0 0 8em 0; */
+  color: white;
+  table-layout:fixed;
+  width:100%;
+  opacity: 1;
+}
+
+.container td, .container th {
+  padding: 10px;   
+  width: 100px;
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+  background-color: #335088;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+  background-color: #7590cd;
+}
+
+.container th {
+  background-color: #6187df;
+}
+
+.container td {
+  overflow: hidden;
+}
+
+.container td:hover {
+  overflow: visible;
+}
+ 
+/* .container td:first-child { color: #ffb1bc; } */
+
+.container tr:hover {
+ background-color: #99acd3;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+   -moz-box-shadow: 0 6px 6px -6px #0E1119;
+        box-shadow: 0 6px 6px -6px #697bad;
+}
+
+.container td:hover {
+background-color: #c5c4a5;
+color: #403E10;
+box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+transform: translate3d(6px, -6px, 0);
+}
+
+@media (max-width: 800px) {
+.container td:nth-child(4),
+.container th:nth-child(4) { display: none; }
+}
+
+caption h1 {
+  color: black;
+}
+
+.addpatient, .addappointment, .addbilling, .addequipment, .addroom, .addmh, .addpre {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 5px;
+  padding-bottom: 10px;
+  border: 3px black solid;
+  border-radius: 1rem;
+  overflow: auto;
+  height: 90vh;
+}
+
+.doctorcontent, .patientcontent, .appointmentcontent, .staffcontent, .billingcontent, .equipmentcontent, .roomcontent, .updata, .predata {
+  display: flex; 
+  flex-direction: column; 
+  gap: 5rem;
+  position: absolute; 
+  top: 5rem; 
+  left: 12rem;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 1rem;
+  overflow: auto;
+  height: 85vh;
+  width: 85%;
+  background-color: rgb(204, 204, 204);
+}
+
+.sub-container {
+  display: flex; 
+  flex-direction: column;
+  padding: 2rem;
+  position: absolute; 
+  top: 5rem;
+}
+
+.patientcontainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+}
+.patientcontainer h3 {
+  margin: 0;
+}
+.patientcontainer p {
+  margin: 0;
+}

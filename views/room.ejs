@@ -1,0 +1,73 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/hdm.ejs") %>
+<div id="main-first">
+    
+    <%- include('./partials/navbar.ejs') %>
+       <div class="roomcontent" style="overflow: scroll;">
+        <a href="/data/rooms" role="button" style="z-index: 1; position: absolute; right: 100px; top:50px">Add Room</a>
+            <div class="sub-container" style="position: absolute; top: 5rem; left: 1rem;">
+                <div>
+                    <% if (locals.allroomdata) { %>
+                        <table class = "container">
+                            <caption><h1>Room Details:</h1></caption>
+                            <thead>
+                                <tr>
+                                    <th>Room Number</th>                                    
+                                    <th>Type</th>
+                                    <th>Status</th>                          
+                                    <th>Assigned Patient ID</th>
+                                    <th style="width: 60px;">Update</th>
+                                    <th style="width: 60px;">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% allroomdata.forEach((s) => { %>
+                                    <tr>
+                                        <td><%= s.roomid %></td>
+                                        <td><%= s.type %></td>
+                                        <td><%= s.status %></td>
+                                        <td><%= s.assignedpatientid %></td>                                       
+                                        <td><a href="/data/updateroom/<%= s.roomid %>" class="table-button">Update</a></td>
+                                        <td><a href="/data/deleteroom/<%= s.roomid %>" onclick="return confirmDelete()" class="table-button">Delete</a></td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    <% } else { %>
+                        <p><%= locals.text %></p>
+                    <% } %> 
+                </div>
+                <div>
+                    <% if (locals.roomdata) { %>
+                        <table class = "container">
+                            <caption><h1>Occupied Rooms:</h1></caption>
+                            <thead>
+                                <tr>
+                                    <th>Room Number</th>                                    
+                                    <th>Type</th>
+                                    <th>Status</th>                          
+                                    <th>Assigned Patient ID</th>
+                                    <th>Patient Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% roomdata.forEach((s) => { %>
+                                    <tr>
+                                        <td><%= s.roomid %></td>
+                                        <td><%= s.type %></td>
+                                        <td><%= s.status %></td>
+                                        <td><%= s.assignedpatientid %></td>
+                                        <td><%= s.name %></td>                                       
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    <% } else { %>
+                        <p><%= locals.text %></p>
+                    <% } %>
+                </div>                
+            </div>
+        </div>
+</div>
+<script src="../public/assets/javascript/delete.js"></script>
+<%- include("./partials/footer.ejs") %>

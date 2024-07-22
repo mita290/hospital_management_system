@@ -1,0 +1,36 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/hdm.ejs") %>
+<div id="main-first">
+    <%- include('./partials/navbar.ejs') %>
+    <div class="addpatient" style="width:100%; max-height: 75%; border: none;">
+        <div style="overflow-y: scroll; padding: 2rem; border: 3px black solid;">
+            <form id="updatepatient" action="/data/updatepatient/<%= locals.patientid %>" method="POST">
+                <legend><h2>Update Patient (Id: <%= locals.patientid %>)</h2></legend>
+            
+                <label for="fullname"><h3>Name: </h3></label>
+                <input type="text" name="fullname" id="fullname" required>
+            
+                <label for="dob"><h3>Date Of Birth: </h3></label>
+                <input type="date" name="dob" id="dob" required>
+            
+                <label for="gender"><h3>Gender: </h3></label>
+                <input type="text" name="gender" id="gender" required>
+            
+                <label for="phone"><h3>Phone: </h3></label>
+                <input type="number" name="phone" id="phone" required>
+            
+                <label for="email"><h3>Email: </h3></label>
+                <input type="email" name="email" id="email" required>
+            
+                <label for="address"><h3>Address: </h3></label>
+                <input type="text" name="address" id="address" required><br /><br />
+            
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+        
+    </div>
+</div>
+           
+        
+<%- include("./partials/footer.ejs") %>

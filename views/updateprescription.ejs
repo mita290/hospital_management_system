@@ -1,0 +1,25 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/hdm.ejs") %>
+<div id="main-first">
+    <%- include('./partials/navbar.ejs') %>
+    <div class="addpre" style="width:100%; max-height: 75%; border: none;">
+        <div style="overflow-y: scroll; padding: 2rem; border: 3px black solid;">
+            <form id="updatepre" action="/data/updatepre/<%= locals.prescriptionid.replace(':', '') %>&<%= locals.patientid.replace(':', '') %>&<%= locals.doctorid.replace(':', '') %>" method="POST">
+                <legend><h2>Update Prescription Details: <%= locals.prescriptionid %></h2></legend>
+
+                <label>Patient ID: <%= locals.patientid %></label><br />
+                <label>Doctor ID: <%= locals.doctorid %></label> 
+
+                <label for="date"><h3>Date: </h3></label>
+                <input type="date" name="date" id="date" required>             
+
+                <label for="medicationdetails"><h3>Medication Details: </h3></label>
+                <input type="text" name="medicationdetails" id="medicationdetails" required><br/><br/>                        
+                                
+                <input type="submit" value="Update Record" />
+            </form>
+        </div>
+        
+    </div>
+</div>
+<%- include("./partials/footer.ejs") %>

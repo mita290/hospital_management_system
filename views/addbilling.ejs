@@ -1,0 +1,40 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/hdm.ejs") %>
+<div id="main-first">
+    <%- include('./partials/navbar.ejs') %>
+    <div class="addbilling" style="width:100%; max-height: 75%; border: none;">
+        <div style="overflow-y: scroll; padding: 2rem; border: 3px black solid;">
+            <form action="/data/billing" method="POST" id="addbilling">
+                <legend><h2>Add Bill:</h2></legend>
+
+                <label for="appointmentid"><h3>Appointment ID: </h3></label>
+                <input type="text" name="appointmentid" id="appointmentid" required>
+                        
+                <label for="patientid"><h3>Patient ID: </h3></label>
+                <input type="text" name="patientid" id="patientid" required>
+
+                <label for="doctorid"><h3>Doctor ID: </h3></label>
+                <input type="text" name="doctorid" id="doctorid" required>
+
+                <label for="consultationfee"><h3>Consultation Fee: </h3></label>
+                <input type="number" required name="consultationfee" step=".01" id="consultationfee">
+
+                <label for="additionalcosts"><h3>Additional Costs: </h3></label>
+                <input type="number" required name="additionalcosts" step=".01" id="additionalcosts">
+   
+                <label for="billingdate"><h3>Billing Date: </h3></label>
+                <input type="date" name="billingdate" id="billingdate" required>
+    
+                <label for="paymentstatus"><h3>Payment Status: </h3></label>
+                <select name="paymentstatus" id="paymentstatus" required>
+                    <option value="UNPAID">UNPAID</option>
+                    <option value="PAID">PAID</option>
+                </select><br/><br/> <br /><br />
+                 
+                <input type="submit" value="Add Bill To Database" />
+            </form>
+        </div>
+        
+    </div>
+</div>
+<%- include("./partials/footer.ejs") %>

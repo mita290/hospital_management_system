@@ -1,0 +1,41 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/hdm.ejs") %>
+<div id="main-first">
+    <%- include('./partials/navbar.ejs') %>
+    <div class="addappointment" style="width:100%; max-height: 75%; border: none;">
+        <div style="overflow-y: scroll; padding: 2rem; border: 3px black solid;">
+            <form action="/data/appointment" method="POST" id="addappointment">
+                <legend><h2>Book Appointment:</h2></legend>
+                        
+                <label for="patientid"><h3>Patient ID: </h3></label>
+                <input type="text" name="patientid" id="patientid" required>
+
+                <label for="doctorid"><h3>Doctor ID: </h3></label>
+                <input type="text" name="doctorid" id="doctorid" required>
+
+                <label for="staffid"><h3>Staff ID: </h3></label>
+                <input type="text" name="staffid" id="staffid" required>
+    
+                <label for="appointmentdate"><h3>Appointment Date: </h3></label>
+                <input type="date" name="appointmentdate" id="appointmentdate" required>
+        
+                <label for="appointmenttime"><h3>Appointment Time: </h3></label>
+                <input type="time" name="appointmenttime" id="appointmenttime" required>
+    
+                <label for="reason"><h3>Reason For Appointment: </h3></label>
+                <input type="text" name="reason" id="reason" required><br /><br />
+
+                <label for="astatus"><h3>Status </h3></label>
+                <select name="astatus" id="astatus" required>
+                    <option value="SCHEDULED">SCHEDULED</option>
+                    <option value="COMPLETED">COMPLETED</option>
+                    <option value="CANCELLED">CANCELLED</option>
+                </select><br/><br/>
+                 
+                <input type="submit" value="Book Appointment" />
+            </form>
+        </div>
+        
+    </div>
+</div>
+<%- include("./partials/footer.ejs") %>

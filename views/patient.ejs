@@ -1,0 +1,53 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/hdm.ejs") %>
+<div id="main-first">
+    <%- include('./partials/navbar.ejs') %>
+    
+    <div class="patientcontent" style="overflow: scroll;">
+        <a href="/data/patient" role="button" style="z-index: 1; position: absolute; right: 100px; top:50px">Add Patient</a>
+        <div class="sub-container" style="position: absolute; top: 5rem;">
+            <% if (locals.patientdata != "No Data Available") { %>
+                <table class = "container">
+                    <caption>
+                        <h1>Patient Data:</h1>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Patient Name</th>
+                            <th>Date Of Birth</th>
+                            <th style="width: 30px;">Gender</th>
+                            <th style="width: 55px;">Phone</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th style="width: 40px;">Update</th>
+                            <th style="width: 40px;">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% patientdata.forEach((p) => { %>
+                            <tr>
+                                <td><a id="patientlink" href="/data/patientdetail/<%= p.patientid %>"><%= p.patientid %></a></td>
+                                <td><%= p.name %></td>
+                                <td><%= p.dob %></td>
+                                <td><%= p.gender %></td>
+                                <td><%= p.phone %></td>
+                                <td><%= p.email %></td>
+                                <td><%= p.address %></td>
+                                <td><a href="/data/updatepatient/<%= p.patientid %>" class="table-button">Update</a></td>
+                                <td><a href="/data/deletepatient/<%= p.patientid %>" onclick="return confirmDelete()" class="table-button">Delete</a></td>
+
+                                
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            <% } %>
+            <% if(locals.patientdata == "No Data Available") { %>
+                <p><%= locals.patientdata %></p>
+            <% } %>
+        </div>
+    </div>
+</div>
+<script src="../public/assets/javascript/delete.js"></script>
+<%- include("./partials/footer.ejs") %>

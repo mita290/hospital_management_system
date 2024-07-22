@@ -1,0 +1,54 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/hdm.ejs") %>
+<div id="main-first">
+    <%- include('./partials/navbar.ejs') %>
+       <div class="doctorcontent">
+        <div id="sub-container" style="overflow: scroll;">
+            <% if (locals.doctordata != "No Data Available") { %>
+                <table class = "container" >
+                    <caption><h1>Doctor Data:</h1><br/></caption>
+                    <thead>
+                        <tr>
+                            <th>Doctor ID</th>
+                            <th>Doctor Name</th>
+                            <th>Date Of Birth</th>
+                            <th>Gender</th>
+                            <th>Contact Information</th>
+                            <th>University</th>
+                            <th>Experience</th>
+                            <th>Description</th>
+                            <th>Availability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% doctordata.forEach((d) => { %>
+                            <tr>
+                                <td><%= d.doctorid %></td>
+                                <td><%= d.name %></td>
+                                <td><%= d.dateofbirth %></td>
+                                <td><%= d.gender %></td>
+                                <td>
+                                    <p>Contact Information:</p>
+                                    <p>Email:</p>
+                                    <p><%= d.email %></p>
+                                    <p>Phone Number:</p>
+                                    <p><%= d.phonenumber %></p>
+                                    <p>Address:</p>
+                                    <p><%= d.address %></p>
+                                </td>
+                                <td><%= d.university %></td>
+                                <td><%= d.experience %></td>
+                                <td><%= d.assignedrole %></td>
+                                <td><%= d.availabilitystatus %></td>                                
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            <% } %>
+            <% if(locals.doctordata == "No Data Available") { %>
+                <p><%= locals.doctordata %></p>
+            <% } %>
+        </div>
+    </div>    
+</div>
+<%- include("./partials/footer.ejs") %>

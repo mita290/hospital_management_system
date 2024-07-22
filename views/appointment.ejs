@@ -1,0 +1,124 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/hdm.ejs") %>
+<div id="main-first">
+    
+    <%- include('./partials/navbar.ejs') %>
+       <div class="appointmentcontent" style="overflow: scroll;">
+        <a href="/data/appointment" role="button" style="z-index: 1; position: absolute; right: 100px; top:50px">Add Appointment</a>
+            <div class="sub-container" style="position: absolute; top: 5rem;">
+                <div>
+                    <% if (locals.scheduledAppointments) { %>
+                        <table class = "container">
+                            <caption><h1>Scheduled Appointments:</h1></caption>
+                            <thead>
+                                <tr>
+                                    <th>Appointment ID</th>
+                                    <th>Patient Name</th>
+                                    <th>Doctor Name</th>
+                                    <th>Staff Name</th>
+                                    <th>Appointment Date</th>
+                                    <th>Appointment Time</th>
+                                    <th>Reason For Appointment</th>
+                                    <th style="width: 30px;">Update</th>
+                                    <th style="width: 30px;">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% scheduledAppointments.forEach((s) => { %>
+                                    <tr>
+                                        <td><%= s.appointmentid %></td>
+                                        <td><%= s.patientname %></td>
+                                        <td><%= s.doctorname %></td>
+                                        <td><%= s.staffname %></td>
+                                        <td><%= s.appointmentdate %></td>
+                                        <td><%= s.appointmenttime %></td>
+                                        <td><%= s.reasonforappointment %></td>
+                                        <td><a href="/data/updateappointment/<%= s.appointmentid %>" class="table-button">+</a></td>
+                                        <td><a href="/data/deleteappointment/<%= s.appointmentid %>" onclick="return confirmDelete()" class="table-button">X</a></td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    <% } else { %>
+                        <p><%= scheduledAppointments %></p>
+                    <% } %>
+                </div>
+                <div>
+                    <% if (locals.completedAppointments) { %>
+                        <table class = "container">
+                            <caption><h1>Completed Appointments:</h1></caption>
+                            <thead>
+                                <tr>
+                                    <th>Appointment ID</th>
+                                    <th>Patient Name</th>
+                                    <th>Doctor Name</th>
+                                    <th>Staff Name</th>
+                                    <th>Appointment Date</th>
+                                    <th>Appointment Time</th>
+                                    <th>Reason For Appointment</th>
+                                    <th style="width: 30px;">Update</th>
+                                    <th style="width: 30px;">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% completedAppointments.forEach((s) => { %>
+                                    <tr>
+                                        <td><%= s.appointmentid %></td>
+                                        <td><%= s.patientname %></td>
+                                        <td><%= s.doctorname %></td>
+                                        <td><%= s.staffname %></td>
+                                        <td><%= s.appointmentdate %></td>
+                                        <td><%= s.appointmenttime %></td>
+                                        <td><%= s.reasonforappointment %></td>
+                                        <td><a href="/data/updateappointment/<%= s.appointmentid %>" class="table-button">+</a></td>
+                                        <td><a href="/data/deleteappointment/<%= s.appointmentid %>" onclick="return confirmDelete()" class="table-button">X</a></td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    <% } else { %>
+                        <p><%= completedAppointments %></p>
+                    <% } %>
+                </div>
+                <div>
+                    <% if (locals.cancelledAppointments) { %>
+                        <table class = "container">
+                            <caption><h1>Cancelled Appointments:</h1></caption>
+                            <thead>
+                                <tr>
+                                    <th>Appointment ID</th>
+                                    <th>Patient Name</th>
+                                    <th>Doctor Name</th>
+                                    <th>Staff Name</th>
+                                    <th>Appointment Date</th>
+                                    <th>Appointment Time</th>
+                                    <th>Reason For Appointment</th>
+                                    <th style="width: 30px;">Update</th>
+                                    <th style="width: 30px;">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% cancelledAppointments.forEach((s) => { %>
+                                    <tr>
+                                        <td><%= s.appointmentid %></td>
+                                        <td><%= s.patientname %></td>
+                                        <td><%= s.doctorname %></td>
+                                        <td><%= s.staffname %></td>
+                                        <td><%= s.appointmentdate %></td>
+                                        <td><%= s.appointmenttime %></td>
+                                        <td><%= s.reasonforappointment %></td>
+                                        <td><a href="/data/updateappointment/:<%= s.appointmentid %>" class="table-button">+</a></td>
+                                        <td><a href="/data/deleteappointment/<%= s.appointmentid %>" onclick="return confirmDelete()" class="table-button">X</a></td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    <% } else { %>
+                        <p><%= cancelledAppointments %></p>
+                    <% } %>
+                </div>
+            </div>
+       </div>
+</div>
+<script src="../public/assets/javascript/delete.js"></script>
+<%- include("./partials/footer.ejs") %>

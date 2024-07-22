@@ -1,0 +1,28 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/hdm.ejs") %>
+<div id="main-first">
+    <%- include('./partials/navbar.ejs') %>
+    <div class="addroom" style="width:100%; max-height: 75%; border: none;">
+        <div style="overflow-y: scroll; padding: 2rem; border: 3px black solid;">
+            <form action="/data/rooms" method="POST" id="addroom">
+                <legend><h2>Add Room:</h2></legend>
+
+                <label for="type"><h3>Type: </h3></label>
+                <input type="text" name="type" id="type" required>
+               
+                <label for="astatus"><h3>Status: </h3></label>
+                <select name="astatus" id="astatus" required>
+                    <option value="Available">Available</option>
+                    <option value="Occupied">Occupied</option>
+                </select>
+
+                <label for="assignedpatientid"><h3>Assigned Patient ID: </h3></label>
+                <input type="text" name="assignedpatientid" id="assignedpatientid"><br/><br/>                        
+                                
+                <input type="submit" value="Add Room" />
+            </form>
+        </div>
+        
+    </div>
+</div>
+<%- include("./partials/footer.ejs") %>

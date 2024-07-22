@@ -1,0 +1,94 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/hdm.ejs") %>
+<div id="main-first">
+    
+    <%- include('./partials/navbar.ejs') %>
+    
+       <div class="equipmentcontent" style="overflow: scroll;">
+        <a href="/data/equipment" role="button" style="z-index: 1; position: absolute; right: 100px; top:50px">Add Equipment</a>
+            <div class="sub-container" style="position: absolute; top: 5rem; left: 1rem;">
+                <div>
+                    <% if (locals.equipmentdata) { %>
+                        <table class = "container">
+                            <caption><h1>Equipment Details:</h1></caption>
+                            <thead>
+                                <tr>
+                                    <th>Equipment ID</th>                                    
+                                    <th>Type</th>
+                                    <th>Quantity</th>
+                                    <th>Status</th>                          
+                                    <th>Last Checked Date</th>
+                                    <th>Last Checked By</th>
+                                    <th style="width: 60px;">Update</th>
+                                    <th style="width: 60px;">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% equipmentdata.forEach((s) => { %>
+                                    <tr>
+                                        <td><%= s.equipmentid %></td>
+                                        <td><%= s.type %></td>
+                                        <td><%= s.quantity %></td>
+                                        <td><%= s.status %></td>
+                                        <td><%= s.lastcheckeddate %></td>
+                                        <td>
+                                            ID: <%= s.staffid %><br />
+                                            Name: <%= s.name %>
+                                        </td>                                        
+                                        <td><a href="/data/updateequipment/<%= s.equipmentid %>" class="table-button">Update</a></td>
+                                        <td><a href="/data/deleteequipment/<%= s.equipmentid %>" onclick="return confirmDelete()" class="table-button">Delete</a></td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    <% } else { %>
+                        <p>No Data Available</p>
+                    <% } %>
+                </div>
+                <div>
+                    <h1>Equipment Status Pie Chart</h1>
+                    <div id="chartContainer" style="height: 300px; width: 100%;">
+                    
+                </div>                
+            </div>
+        </div>
+</div>
+
+<!-- <script src="../public/assets/javascript/piechart.js"></script> -->
+<script src="../public/assets/javascript/delete.js"></script>
+<script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+<script type="text/javascript">
+    // Get the piechart data passed from server-side
+    var piechartData = JSON.parse('<%- JSON.stringify(piechart) %>');
+    
+    // Check if piechartData is not empty
+    if (piechartData && piechartData.length > 0) {
+        var dataPoints = piechartData.map(function(item) {
+            return {
+                y: item.count,
+                indexLabel: item.status
+            };
+        });
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            theme: "light2",
+            title: {
+                text: "Equipment Data"
+            },      
+            data: [{
+                type: "pie",
+                showInLegend: true,
+                toolTipContent: "{y} - #percent %",
+                yValueFormatString: "#,##0,,.## Million",
+                legendText: "{indexLabel}",
+                dataPoints: dataPoints
+            }]
+        });
+
+        chart.render();
+    }
+</script>
+
+
+
+<%- include("./partials/footer.ejs") %>

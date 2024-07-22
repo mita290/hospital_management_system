@@ -1,0 +1,88 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/hdm.ejs") %>
+<div id="main-first">
+    
+    <%- include('./partials/navbar.ejs') %>
+       <div class="content" style="overflow: scroll;">
+            <div class="sub-container" style="position: absolute; top: 5rem;">
+                <div class="table1" style="margin: 50px; margin-top: 0; margin-left: 0%; padding: 2rem;">
+                    <h1 id="clockContainer">
+                        <span>Time: </span>
+                        <span id="hour"></span>
+                        <span id="minute"></span>
+                        <span id="second"></span>
+                    </h1>
+                </div>
+                <div style="display: flex; gap: 5rem;">
+                    <div class="table1" style="overflow: hidden; width: 40%; ">
+                        <div style="overflow-y: scroll; overflow-x: hidden;">
+                            <% if (locals.doctordata) { %>
+                                <caption><h1 style="padding-left: 2rem;">Available Doctors:</h1></caption>
+                                <table class = "container">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Doctor Name</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% doctordata.forEach((d) => { %>
+                                            <tr>
+                                                <td><%= d.doctorid %></td>
+                                                <td><%= d.name %></td>
+                                                <td><%= d.assignedrole %></td> 
+                                            </tr>
+                                        <% }) %>
+                                    </tbody>
+                                </table>
+                            <% } %>
+                            <% if(locals.text) { %>
+                                <p><%= text %></p>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="table1" style="overflow: hidden">
+                        <div style="overflow-y: scroll;">
+                            <% if (locals.patientdata) { %>
+                                <caption><h1 style="padding-left: 2rem;">Upcoming Appointments:</h1></caption>
+                                <table class = "container">
+                                    <thead>
+                                        <tr>
+                                            <th>Patient Name</th>
+                                            <th>Patient ID</th>
+                                            <th>Appointment Id</th>
+                                            <th>Appointment Time</th>
+                                            <th>Appointment Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% patientdata.forEach((p) => { %>
+                                            <tr>
+                                                <td><%= p.name %></td>
+                                                <td><%= p.patientid %></td>
+                                                <td><%= p.appointmentid %></td>
+                                                <td><%= p.appointmenttime %></td>
+                                                <td><%= p.status %></td>
+                                            </tr>
+                                        <% }) %>
+                                    </tbody>
+                                </table>
+                            <% } %>
+                            <% if(locals.text) { %>
+                                <p><%= text %></p>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        Equipment Data
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/public/assets/javascript/clock.js"></script>
+<%- include("./partials/footer.ejs") %>
+        

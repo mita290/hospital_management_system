@@ -1,0 +1,35 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/hdm.ejs") %>
+<div id="main-first">
+    <%- include('./partials/navbar.ejs') %>
+    <div class="addequipment" style="width:100%; max-height: 75%; border: none;">
+        <div style="overflow-y: scroll; padding: 2rem; border: 3px black solid;">
+            <form action="/data/equipment" method="POST" id="addequipment">
+                <legend><h2>Add Equipment:</h2></legend>
+
+                <label for="type"><h3>Type: </h3></label>
+                <input type="text" name="type" id="type" required>
+                        
+                <label for="quantity"><h3>Quantity: </h3></label>
+                <input type="number" min="0" name="quantity" id="quantity" required>
+
+                <label for="astatus"><h3>Status: </h3></label>
+                <select name="astatus" id="astatus" required>
+                    <option value="AVAILABLE">AVAILABLE</option>
+                    <option value="UNAVAILABLE">UNAVAILABLE</option>
+                    <option value="RESTOCKING REQUIRED">RESTOCKING REQUIRED</option>
+                </select>
+
+                <label for="lastcheckeddate"><h3>Last Checked Date: </h3></label>
+                <input type="date" name="lastcheckeddate" id="lastcheckeddate" required>
+
+                <label for="staffid"><h3>Staff ID: </h3></label>
+                <input type="text" required name="staffid" id="staffid"><br/><br/>                        
+                                
+                <input type="submit" value="Add Equipment" />
+            </form>
+        </div>
+        
+    </div>
+</div>
+<%- include("./partials/footer.ejs") %>

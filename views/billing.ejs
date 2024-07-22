@@ -1,0 +1,56 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/hdm.ejs") %>
+<div id="main-first">
+    
+    <%- include('./partials/navbar.ejs') %>
+       <div class="billingcontent" style="overflow: scroll;">
+        <a href="/data/billing" role="button" style="z-index: 1; position: absolute; right: 100px; top:50px">Add Bill</a>
+            <div class="sub-container" style="position: absolute; top: 5rem; left: 1rem;">
+                <div>
+                    <% if (locals.billingdata) { %>
+                        <table class = "container">
+                            <caption><h1>Billing Details For Completed Appointments:</h1></caption>
+                            <thead>
+                                <tr>
+                                    <th>Billing ID</th>
+                                    <th>Appointment ID</th>
+                                    <th>Patient Name</th>
+                                    <th>Doctor Name</th>
+                                    <th>Consulation Fee</th>
+                                    <th>Additional Costs</th>
+                                    <th>Total Cost</th>
+                                    <th>Billing Date</th>
+                                    <th>Appointment Time</th>
+                                    <th>Payment Status</th>
+                                    <th style="width: 60px;">Update</th>
+                                    <th style="width: 60px;">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% billingdata.forEach((s) => { %>
+                                    <tr>
+                                        <td><%= s.billingid %></td>
+                                        <td><%= s.appointmentid %></td>
+                                        <td><%= s.patientname %></td>
+                                        <td><%= s.doctorname %></td>
+                                        <td><%= s.consultationfee %></td>
+                                        <td><%= s.additionalcosts %></td>
+                                        <td><%= s.totalamount %></td>
+                                        <td><%= s.billingdate %></td>
+                                        <td><%= s.appointmenttime %></td>
+                                        <td><%= s.paymentstatus %></td>
+                                        <td><a href="/data/updatebilling/<%= s.billingid %>" class="table-button">Update</a></td>
+                                        <td><a href="/data/deletebilling/<%= s.billingid %>" onclick="return confirmDelete()" class="table-button">Delete</a></td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    <% } else { %>
+                        <p><%= billingdata %></p>
+                    <% } %>
+                </div>                
+            </div>
+        </div>
+</div>
+<script src="../public/assets/javascript/delete.js"></script>
+<%- include("./partials/footer.ejs") %>

@@ -1,0 +1,47 @@
+<%- include("./partials/header.ejs") %>
+<%- include("./partials/hdm.ejs") %>
+<div id="main-first">
+    <%- include('./partials/navbar.ejs') %>
+       <div class="staffcontent">
+        <div id="sub-container" style="position: absolute; top: 5rem;">
+            <% if (locals.staffdata != "No Data Available") { %>
+                <table class = "container">
+                    <caption><h1>Staff Data:</h1></caption>
+                    <thead>
+                        <tr>
+                            <th>Staff ID</th>
+                            <th>Staff Name</th>
+                            <th>Date Of Birth</th>
+                            <th>Gender</th>
+                            <th>Role</th>
+                            <th>Date Joined</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% staffdata.forEach((s) => { %>
+                            <tr>
+                                <td><%= s.staffid %></td>
+                                <td><%= s.name %></td>
+                                <td><%= s.dob %></td>
+                                <td><%= s.gender %></td>
+                                <td><%= s.role %></td>
+                                <td><%= s.datejoined %></td>
+                                <td><%= s.phone %></td>
+                                <td><%= s.email %></td>
+                                <td><%= s.address %></td>                                
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            <% } %>
+            <% if(locals.staffdata == "No Data Available") { %>
+                <p><%= locals.staffdata %></p>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<%- include("./partials/footer.ejs") %>
