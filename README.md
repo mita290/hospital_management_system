@@ -47,13 +47,13 @@ Login using the credentials provided (default admin credentials can be set up in
 
 ## Database Schema
 
-### Patients <br />
+* ### Patients <br />
 PatientID (Primary Key) <br />
 Name <br />
 DateOfBirth <br />
 Gender <br />
 ContactInformation (Phone, Email, Address) <br />
-### Doctors <br />
+* ### Doctors <br />
 DoctorID (Primary Key)<br />
 Name <br />
 DateOfBirth <br />
@@ -64,7 +64,7 @@ Email <br />
 Address <br />
 AssignedRole (e.g., General Surgeon, Cardiothoracic Surgeon) <br />
 AvailabilityStatus <br />
-### Appointments <br />
+* ### Appointments <br />
 AppointmentID (Primary Key) <br />
 PatientID (Foreign Key) <br />
 DoctorID (Foreign Key) <br />
@@ -73,7 +73,7 @@ AppointmentTime <br />
 ReasonForAppointment <br />
 Status (Scheduled, Completed, Cancelled) <br />
 StaffID (Foreign Key – they booked the appointment) <br />
-### Billing <br />
+* ### Billing <br />
 BillingID (Primary Key) <br />
 AppointmentID (Foreign Key) <br />
 PatientID (Foreign Key) <br />
@@ -83,49 +83,49 @@ AdditionalCosts (Syringes, Medicines, etc.) <br />
 TotalAmount <br />
 BillingDate <br />
 PaymentStatus (Paid, Unpaid)<br />
-### MedicalHistory<br />
+* ### MedicalHistory<br />
 MedicalHistoryID (Primary Key) <br />
 PatientID (Foreign Key) <br />
 Date <br />
 Details (Diagnosis, Treatments, etc.) <br />
-### Prescriptions <br />
+* ### Prescriptions <br />
 PrescriptionID (Primary Key) <br />
 PatientID (Foreign Key) <br />
 DoctorID (Foreign Key) <br />
 Date <br />
 MedicationDetails<br />
-### Equipment <br />
+* ### Equipment <br />
 EquipmentID (Primary Key) <br />
 Type (e.g., Bed, Oxygen Cylinder, Defibrillator) <br />
 Quantity <br />
 Status (Available, In Use, Maintenance) <br />
 LastCheckedDate <br />
 StaffID (Foreign Key) <br />
-### Rooms <br />
+* ### Rooms <br />
 RoomID (Primary Key) <br />
 Type (e.g., Single, Double, ICU) <br />
 Status (Available, Occupied, Maintenance) <br />
 AssignedPatientID (Foreign Key, nullable) <br />
 AssignedDoctorID (Foreign Key, nullable) <br />
-### Staff <br />
+* ### Staff <br />
 StaffID (Primary Key)<br />
 Name <br />
 Username <br />
 Password (Hashed) <br />
 ContactInformation (Phone, Email) <br />
-## Relationships
-**Patients to Appointments**: One-to-Many <br />
-**Doctors to Appointments**: One-to-Many <br />
-**Appointments to Billing**: One-to-One <br />
-**Patients to Billing**: One-to-Many <br />
-**Patients to MedicalHistory**: One-to-Many <br />
-**Patients to Prescriptions**: One-to-Many <br />
-**Doctors to Prescriptions**: One-to-Many <br />
-**Patients to Rooms**: One-to-One <br />
-**Appointments to Prescriptions**: One-to-One <br />
-**Doctors to Rooms**: Many-to-Many <br />
-**Equipment to Staff**: Many-to-One <br />
-**Staff to Appointment**: One-to-Many <br />
+* ## Relationships
+* **Patients to Appointments**: One-to-Many <br />
+* **Doctors to Appointments**: One-to-Many <br />
+* **Appointments to Billing**: One-to-One <br />
+* **Patients to Billing**: One-to-Many <br />
+* **Patients to MedicalHistory**: One-to-Many <br />
+* **Patients to Prescriptions**: One-to-Many <br />
+* **Doctors to Prescriptions**: One-to-Many <br />
+* **Patients to Rooms**: One-to-One <br />
+* **Appointments to Prescriptions**: One-to-One <br />
+* **Doctors to Rooms**: Many-to-Many <br />
+* **Equipment to Staff**: Many-to-One <br />
+* **Staff to Appointment**: One-to-Many <br />
 
 ## Features
 
