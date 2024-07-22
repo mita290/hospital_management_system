@@ -142,16 +142,20 @@ ContactInformation (Phone, Email) <br />
 * Dashboard displaying time, available doctors, upcoming appointments, with navigation via a vertical sidebar
 
 ## Screenshots
-* # Home Page
- 
-* # Login/Registration page
-* # Dashboard
-* # Patient management page
-* # Doctor management page
-* # Appointment scheduling page
-* # Billing page
-* # Equipment management page
-* # Room management page
+* ## Home Page
+![Home Page Screenshot](https://github.com/mita290/hospital_management_system/blob/master/screenshots/home.jpeg) 
+* ## Login/Registration page
+![Staff Registration Page](https://github.com/mita290/hospital_management_system/blob/master/screenshots/register%20staff.jpeg)
+![Login Page Screenshot](https://github.com/mita290/hospital_management_system/blob/master/screenshots/login.jpeg)
+* ## Dashboard
+![Dashboard Screenshot](https://github.com/mita290/hospital_management_system/blob/master/screenshots/dashboard.jpeg)
+* ## Patient management page
+![All Patients]()
+* ## Doctor management page
+* ## Appointment scheduling page
+* ## Billing page
+* ## Equipment management page
+* ## Room management page
 
 ## Future Enhancements
 * Develop a module where doctors can update their availability status.
