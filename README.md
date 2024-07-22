@@ -145,13 +145,13 @@ ContactInformation (Phone, Email) <br />
 * ## Home Page
 ![Home Page Screenshot](screenshots/home.jpeg) 
 * ## Login/Registration page
-![Staff Registration Page](https://github.com/mita290/hospital_management_system/blob/master/screenshots/register%20staff.jpeg)
+![Staff Registration Page](screenshots/register%20staff.jpeg)
 ![Login Page Screenshot](screenshots/login.jpeg)
 * ## Dashboard
 ![Dashboard Screenshot](screenshots/dashboard.jpeg)
 * ## Patient management page
 ![All Patients](screenshots/patient.jpeg)
-![Add Patients](https://github.com/mita290/hospital_management_system/blob/master/screenshots/add%20patient.jpeg)
+![Add Patients](screenshots/add%20patient.jpeg)
 ![Unique Patient Data](screenshots/uniquepatientdata.jpeg)
 * ## Doctor management page
 ![Doctor Data](screenshots/doctor.jpeg)
