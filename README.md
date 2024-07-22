@@ -45,7 +45,7 @@ Login using the credentials provided (default admin credentials can be set up in
 ## Entities and Relationships
 
 ### ER Model
-(url)
+![ER model](public/assets/er%20model/ERDDiagram1.jpg)
 
 ## Database Schema
 
