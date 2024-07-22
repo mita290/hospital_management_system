@@ -16,7 +16,7 @@ This project is a Hospital Management System designed to manage various aspects 
 
 ## Installation and Setup
 1) Clone the repository:
-```git clone <repository_url>```
+```git clone https://github.com/mita290/hospital_management_system.git```
 
 2) Navigate to the project directory:
 ```cd hospitalmanagementsystem```
@@ -32,7 +32,9 @@ DB_PASSWORD=<your_database_password>
 DB_NAME=<your_database_name>
 SESSION_SECRET=<your_session_secret>
 ```
-5) Run the application:
+
+5) Queries for the creation of tables, functions and sequences can be accessed using this url: ```https://github.com/mita290/hospital_management_system/tree/master/queries```<br />
+6) Run the application:
 ```npm start```
 
 ## Usage Instructions
@@ -135,6 +137,39 @@ ContactInformation (Phone, Email) <br />
 * View patient medical history and prescriptions
 * Book, update, and delete appointments, categorized by status (scheduled, completed, cancelled)
 * Calculate and manage billing (paid and unpaid)
-* Add, update, and delete equipment, with availability graphs generated using Chart.js
+* Add, update, and delete equipment, with availability graphs generated using Canvas.js
 * Add, update, and delete rooms, indicating occupied and available rooms
 * Dashboard displaying time, available doctors, upcoming appointments, with navigation via a vertical sidebar
+
+## Screenshots
+* # Home Page
+* # Login/Registration page
+* # Dashboard
+* # Patient management page
+* # Doctor management page
+* # Appointment scheduling page
+* # Billing page
+* # Equipment management page
+* # Room management page
+
+## Future Enhancements
+* Develop a module where doctors can update their availability status.
+* Create an administrator page where new doctors and staff can be registered.
+* Send appointment details to patients' email IDs when appointments are booked.
+
+## Contributing
+* Fork the repository.
+* Create a new branch (```git checkout -b feature-branch```).
+* Make your changes and commit them (```git commit -m 'Add some feature'```).
+* Push to the branch (```git push origin feature-branch```).
+* Open a pull request.
+
+## License
+This project is licensed under the ISC License - see the LICENSE file for details.
+
+## Contact Information
+For any inquiries, please contact:
+
+**Name**: Manjushree Magesh
+**Email**: mageshmanjushree290@gmail.com
+**GitHub**: mita290
