@@ -115,7 +115,7 @@ Name <br />
 Username <br />
 Password (Hashed) <br />
 ContactInformation (Phone, Email) <br />
-* ## Relationships
+## Relationships
 * **Patients to Appointments**: One-to-Many <br />
 * **Doctors to Appointments**: One-to-Many <br />
 * **Appointments to Billing**: One-to-One <br />
@@ -143,6 +143,7 @@ ContactInformation (Phone, Email) <br />
 
 ## Screenshots
 * # Home Page
+ 
 * # Login/Registration page
 * # Dashboard
 * # Patient management page
@@ -165,11 +166,11 @@ ContactInformation (Phone, Email) <br />
 * Open a pull request.
 
 ## License
-This project is licensed under the ISC License - see the LICENSE file for details.
+This project is licensed under the ISC License - see the [LICENCE](https://github.com/mita290/hospital_management_system/blob/master/LICENSE) file for details.
 
 ## Contact Information
 For any inquiries, please contact:
 
-**Name**: Manjushree Magesh
-**Email**: mageshmanjushree290@gmail.com
-**GitHub**: mita290
+**Name**: Manjushree Magesh <br />
+**Email**: mageshmanjushree290@gmail.com <br />
+**GitHub**: mita290 <br />
