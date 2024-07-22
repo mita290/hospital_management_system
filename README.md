@@ -4,15 +4,15 @@
 This project is a Hospital Management System designed to manage various aspects of hospital operations such as patient management, doctor and staff management, appointment scheduling, billing, and equipment management. It was developed as a mini-project during my second year of college.
 
 ## Tech Stack
-**Backend**: NodeJS, Express
-**Frontend**: EJS templates
-**Database**: PostgreSQL
-**Other Libraries**:
-  *bcrypt* for password hashing
-  *body-parser* for parsing request bodies
-  *dotenv* for environment variables
-  *express-session* for session management
-  *canvas.js* for generating graphs
+**Backend**: NodeJS, Express <br />
+**Frontend**: EJS templates <br />
+**Database**: PostgreSQL <br />
+**Other Libraries**: <br />
+  *bcrypt* for password hashing <br />
+  *body-parser* for parsing request bodies <br />
+  *dotenv* for environment variables <br />
+  *express-session* for session management <br />
+  *canvas.js* for generating graphs <br />
 
 ## Installation and Setup
 1) Clone the repository:
@@ -35,8 +35,106 @@ SESSION_SECRET=<your_session_secret>
 5) Run the application:
 ```npm start```
 
+## Usage Instructions
+
+Navigate to ```http://localhost:3000``` in your web browser. <br />
+Login using the credentials provided (default admin credentials can be set up in the database).
+
 ## Entities and Relationships
 
 ### ER Model
+(url)
 
+## Database Schema
 
+### Patients <br />
+PatientID (Primary Key) <br />
+Name <br />
+DateOfBirth <br />
+Gender <br />
+ContactInformation (Phone, Email, Address) <br />
+### Doctors <br />
+DoctorID (Primary Key)<br />
+Name <br />
+DateOfBirth <br />
+University <br />
+Experience <br />
+PhoneNumber <br />
+Email <br />
+Address <br />
+AssignedRole (e.g., General Surgeon, Cardiothoracic Surgeon) <br />
+AvailabilityStatus <br />
+### Appointments <br />
+AppointmentID (Primary Key) <br />
+PatientID (Foreign Key) <br />
+DoctorID (Foreign Key) <br />
+AppointmentDate <br />
+AppointmentTime <br />
+ReasonForAppointment <br />
+Status (Scheduled, Completed, Cancelled) <br />
+StaffID (Foreign Key – they booked the appointment) <br />
+### Billing <br />
+BillingID (Primary Key) <br />
+AppointmentID (Foreign Key) <br />
+PatientID (Foreign Key) <br />
+DoctorID (Foreign Key) <br />
+ConsultationFee <br />
+AdditionalCosts (Syringes, Medicines, etc.) <br />
+TotalAmount <br />
+BillingDate <br />
+PaymentStatus (Paid, Unpaid)<br />
+### MedicalHistory<br />
+MedicalHistoryID (Primary Key) <br />
+PatientID (Foreign Key) <br />
+Date <br />
+Details (Diagnosis, Treatments, etc.) <br />
+### Prescriptions <br />
+PrescriptionID (Primary Key) <br />
+PatientID (Foreign Key) <br />
+DoctorID (Foreign Key) <br />
+Date <br />
+MedicationDetails<br />
+### Equipment <br />
+EquipmentID (Primary Key) <br />
+Type (e.g., Bed, Oxygen Cylinder, Defibrillator) <br />
+Quantity <br />
+Status (Available, In Use, Maintenance) <br />
+LastCheckedDate <br />
+StaffID (Foreign Key) <br />
+### Rooms <br />
+RoomID (Primary Key) <br />
+Type (e.g., Single, Double, ICU) <br />
+Status (Available, Occupied, Maintenance) <br />
+AssignedPatientID (Foreign Key, nullable) <br />
+AssignedDoctorID (Foreign Key, nullable) <br />
+### Staff <br />
+StaffID (Primary Key)<br />
+Name <br />
+Username <br />
+Password (Hashed) <br />
+ContactInformation (Phone, Email) <br />
+## Relationships
+**Patients to Appointments**: One-to-Many <br />
+**Doctors to Appointments**: One-to-Many <br />
+**Appointments to Billing**: One-to-One <br />
+**Patients to Billing**: One-to-Many <br />
+**Patients to MedicalHistory**: One-to-Many <br />
+**Patients to Prescriptions**: One-to-Many <br />
+**Doctors to Prescriptions**: One-to-Many <br />
+**Patients to Rooms**: One-to-One <br />
+**Appointments to Prescriptions**: One-to-One <br />
+**Doctors to Rooms**: Many-to-Many <br />
+**Equipment to Staff**: Many-to-One <br />
+**Staff to Appointment**: One-to-Many <br />
+
+## Features
+
+* Staff registration and login (with session management and password hashing)
+* Add, update, delete patient records
+* View list of doctors and staff
+* View patient medical history and prescriptions
+* Book, update, and delete appointments, categorized by status (scheduled, completed, cancelled)
+* Calculate and manage billing (paid and unpaid)
+* Add, update, and delete equipment, with availability graphs generated using Chart.js
+* Add, update, and delete rooms, indicating occupied and available rooms
+* Dashboard displaying time, available doctors, upcoming appointments, with navigation via a vertical sidebar
