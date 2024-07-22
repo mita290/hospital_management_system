@@ -150,7 +150,7 @@ ContactInformation (Phone, Email) <br />
 * ## Dashboard
 ![Dashboard Screenshot](https://github.com/mita290/hospital_management_system/blob/master/screenshots/dashboard.jpeg)
 * ## Patient management page
-![All Patients]()
+![All Patients](screenshots/patient.jpeg)
 * ## Doctor management page
 * ## Appointment scheduling page
 * ## Billing page
